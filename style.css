@@ -1,0 +1,293 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  background: #f8fafc;
+  color: #1a202c;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(135deg, #2c7a7b, #319795);
+  color: white;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+header p {
+  opacity: 0.9;
+  margin-top: 5px;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  background: white;
+  padding: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+nav a {
+  color: #2c7a7b;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #2c7a7b;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5') center/cover;
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero h1 {
+  color: white;
+  font-size: 2.5rem;
+  max-width: 700px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* SECTIONS */
+section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #2c7a7b;
+  font-size: 2rem;
+}
+
+/* GRID */
+.services, .testimonials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+/* CARD */
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  border-left: 4px solid transparent;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+  border-left: 4px solid #2c7a7b;
+}
+
+/* CONDITIONS */
+#conditions .card {
+  text-align: center;
+  font-weight: 500;
+}
+
+/* TESTIMONIALS */
+.testimonials .card {
+  position: relative;
+}
+
+.testimonials .card::before {
+  content: "★★★★★";
+  color: gold;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 0.9rem;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #2c7a7b, #38b2ac);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #285e61, #319795);
+}
+
+/* CONTACT */
+#contact {
+  text-align: center;
+}
+
+/* ADDRESS */
+address {
+  margin-top: 15px;
+  font-style: normal;
+  color: #444;
+  line-height: 1.8;
+}
+
+/* FOOTER */
+footer {
+  background: #2c7a7b;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* COUNTER SECTION */
+.counter-section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background: #2c7a7b;
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.counter-box {
+  margin: 20px;
+}
+
+.counter-box h2 {
+  font-size: 2.5rem;
+}
+
+/* CALL BUTTON */
+.call-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #28a745;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.call-btn:hover {
+  transform: scale(1.1);
+}
+/* MOBILE OPTIMIZATION */
+@media (max-width: 768px) {
+
+  /* NAVBAR STACK */
+  nav {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  /* HERO TEXT */
+  .hero {
+    height: 50vh;
+    padding: 10px;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+    padding: 10px;
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 30px 15px;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  /* CARDS */
+  .card {
+    padding: 15px;
+  }
+
+  /* COUNTER */
+  .counter-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .counter-box {
+    margin: 15px 0;
+  }
+
+  .counter-box h2 {
+    font-size: 2rem;
+  }
+
+  /* CALL BUTTON */
+  .call-btn {
+    padding: 12px 16px;
+    font-size: 14px;
+    bottom: 15px;
+    right: 15px;
+  }
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Shree Physiotherapy Clinic | Best Physiotherapist in Dondaicha</title>
+  <meta name="description" content="Shree Physiotherapy Clinic in Dondaicha offers expert treatment for back pain, neck pain, slipped disc, and more. Book your appointment today.">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Shree Physiotherapy Clinic</h1>
+  <p>Advanced Physiotherapy & Pain Relief Treatment in Dondaicha</p>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#conditions">Conditions</a>
+  <a href="#testimonials">Testimonials</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<div class="hero">
+  <h1>Expert Physiotherapy Care for Pain-Free Living</h1>
+</div>
+
+<section id="about">
+  <h2>About Dr. Pratima Anil Dhangar</h2>
+  <p>
+    Dr. Pratima Anil Dhangar is a licensed Physiotherapist with over 10 years of experience 
+    in treating orthopedic, neurological, and musculoskeletal conditions.
+  </p>
+</section>
+
+<section id="services">
+  <h2>Our Physiotherapy Services</h2>
+  <div class="services">
+    <div class="card"><h3>Back & Spine Treatment</h3></div>
+    <div class="card"><h3>Neck Pain Treatment</h3></div>
+    <div class="card"><h3>Sports Injury Rehab</h3></div>
+    <div class="card"><h3>Post-Surgery Rehab</h3></div>
+    <div class="card"><h3>Pain Management</h3></div>
+  </div>
+</section>
+
+<!-- 🔥 COUNTER SECTION -->
+<section class="counter-section">
+  <div class="counter-box">
+    <h2 class="counter" data-target="1200">0</h2>
+    <p>Patients Treated</p>
+  </div>
+  <div class="counter-box">
+    <h2 class="counter" data-target="10">0</h2>
+    <p>Years Experience</p>
+  </div>
+  <div class="counter-box">
+    <h2 class="counter" data-target="98">0</h2>
+    <p>Success Rate (%)</p>
+  </div>
+  <div class="counter-box">
+    <h2 class="counter" data-target="500">0</h2>
+    <p>Happy Patients</p>
+  </div>
+</section>
+
+<section id="conditions">
+  <h2>Conditions We Treat</h2>
+  <div class="services">
+    <div class="card">Back Pain</div>
+    <div class="card">Lower Back Pain</div>
+    <div class="card">Neck Pain</div>
+    <div class="card">Slipped Disc</div>
+    <div class="card">Sciatica</div>
+    <div class="card">Spondylosis</div>
+    <div class="card">Disc Bulge</div>
+    <div class="card">Scoliosis</div>
+    <div class="card">Spinal Arthritis</div>
+    <div class="card">Osteoporosis</div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <h2>Patient Testimonials</h2>
+  <div class="testimonials">
+    <div class="card">
+      <p>"My back pain is completely gone after treatment."</p>
+      <h4>- Rakesh Patil</h4>
+    </div>
+    <div class="card">
+      <p>"Best physiotherapy clinic in Dondaicha."</p>
+      <h4>- Pooja Sharma</h4>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Email: contact@physioclinic.com</p>
+  <p>Phone: +91 8698748880</p>
+  <p>Address: Near Hasti Public School, back side of Om Shanti Mandir, Dondaicha - 425408</p> 
+</section>
+
+<footer>
+  <p>© 2026 Shree Physiotherapy Clinic | All Rights Reserved</p>
+</footer>
+
+<!-- 📞 CALL BUTTON -->
+<a href="tel:8698748880" class="call-btn">📞 Call Now</a>
+
+<!-- 🔥 COUNTER SCRIPT -->
+<script>
+const counters = document.querySelectorAll('.counter');
+
+const runCounter = (counter) => {
+  const target = +counter.getAttribute('data-target');
+  let count = 0;
+
+  const update = () => {
+    const increment = target / 100;
+    count += increment;
+
+    if (count < target) {
+      counter.innerText = Math.ceil(count);
+      requestAnimationFrame(update);
+    } else {
+      counter.innerText = target + "+";
+    }
+  };
+
+  update();
+};
+
+// trigger only when visible
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      runCounter(entry.target);
+      observer.unobserve(entry.target);
+    }
+  });
+});
+
+counters.forEach(counter => {
+  observer.observe(counter);
+});
+</script>
+
+</body>
+</html>
